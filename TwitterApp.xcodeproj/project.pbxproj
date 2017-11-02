@@ -49,6 +49,9 @@
 		1F2BA8E31FAA75B800171A45 /* TwitterAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwitterAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F2BA8E71FAA75B800171A45 /* TwitterAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterAppUITests.swift; sourceTree = "<group>"; };
 		1F2BA8E91FAA75B800171A45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE2771369098CCDB14246288 /* Pods-TwitterApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterApp/Pods-TwitterApp.debug.xcconfig"; sourceTree = "<group>"; };
+		CA84CD9FC5CA29634DD6B747 /* Pods_TwitterApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB522641A660E1FB322E0C43 /* Pods-TwitterApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterApp/Pods-TwitterApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,8 @@
 				1F2BA8DB1FAA75B800171A45 /* TwitterAppTests */,
 				1F2BA8E61FAA75B800171A45 /* TwitterAppUITests */,
 				1F2BA8C31FAA75B700171A45 /* Products */,
+				3F06685F5A11BB9D6D45F583 /* Frameworks */,
+				378D1766A76C8DBBD143FC69 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +133,23 @@
 			path = TwitterAppUITests;
 			sourceTree = "<group>";
 		};
+		378D1766A76C8DBBD143FC69 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BE2771369098CCDB14246288 /* Pods-TwitterApp.debug.xcconfig */,
+				CB522641A660E1FB322E0C43 /* Pods-TwitterApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3F06685F5A11BB9D6D45F583 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CA84CD9FC5CA29634DD6B747 /* Pods_TwitterApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +157,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1F2BA8EC1FAA75B800171A45 /* Build configuration list for PBXNativeTarget "TwitterApp" */;
 			buildPhases = (
+				50D566906AFDF87984E8F764 /* [CP] Check Pods Manifest.lock */,
 				1F2BA8BE1FAA75B700171A45 /* Sources */,
 				1F2BA8BF1FAA75B700171A45 /* Frameworks */,
 				1F2BA8C01FAA75B700171A45 /* Resources */,
+				ADDB85F142C9BC89AEDE940E /* [CP] Embed Pods Frameworks */,
+				52BCDD9FDC1EAC236C6F1C89 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -256,6 +281,61 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		50D566906AFDF87984E8F764 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TwitterApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		52BCDD9FDC1EAC236C6F1C89 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TwitterApp/Pods-TwitterApp-resources.sh",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TwitterApp/Pods-TwitterApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ADDB85F142C9BC89AEDE940E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TwitterApp/Pods-TwitterApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1F2BA8BE1FAA75B700171A45 /* Sources */ = {
@@ -428,9 +508,11 @@
 		};
 		1F2BA8ED1FAA75B800171A45 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE2771369098CCDB14246288 /* Pods-TwitterApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SHD5NBJ8JH;
 				INFOPLIST_FILE = TwitterApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.getynge.TwitterApp;
@@ -442,9 +524,11 @@
 		};
 		1F2BA8EE1FAA75B800171A45 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB522641A660E1FB322E0C43 /* Pods-TwitterApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SHD5NBJ8JH;
 				INFOPLIST_FILE = TwitterApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.getynge.TwitterApp;
